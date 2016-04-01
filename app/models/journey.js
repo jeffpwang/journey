@@ -1,7 +1,7 @@
 app.journey = {
   all: [], 
   new: ( function() {
-            var counter = 0; 
+            var counter = 0;
             var journey = function Journey(title, date) {
               this.title = title; 
               this.date = date; 
