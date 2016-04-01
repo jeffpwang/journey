@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Journey</title>
+
+  <script src="app/lib/jquery-2.1.1.min.js"></script>
+  <script src="app/lib/underscore.min.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/models/journey.js"></script>
+  <script src="app/models/location.js"></script>
+
+  <script src="app/models/moment.js"></script>
+
+  <script src="app/controllers/journeys.controller.js"></script>
+  <script src="app/controllers/locations.controller.js"></script>
+  <script src="app/controllers/moments.controller.js"></script>
+
+</head>
+<body>
+  <div id="wrapper">
+    <h1>Journey</h1>
+
+    <form id="add_journey" action="#" method="post">
+      <label for="journey_title">Add a new journey:</label>
+      <input type="text" id="journey_title" name="journey_title" placeholder="My Amazing Roadtrip">
+      <input type="submit" value="Submit">
+    </form>
+    
+    <form id="add_moment" action="#" method="post">
+      <label for="moment_description">Moment description:</label>
+      <input type="text" id="moment_description" name="moment_description" placeholder="Description">
+      <label for="moment_address">Address:</label>
+      <input type="text" id="address" name="address" placeholder="11 Broadway, New York, NY">
+      <input type="submit" value="Submit">
+    </form><!-- #add_task -->
+    
+    <section id="moments"></section>
+    
+  </div><!-- #wrapper -->
+</body>
+</html>
