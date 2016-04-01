@@ -1,5 +1,5 @@
 $(function(){
-  var journeyController = new app.journey.controller.new;
+  var journeyController = new JourneyController();
   journeyController.initialize();
   
 })
