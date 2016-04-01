@@ -1,5 +1,6 @@
 $(function(){
 
+
   $("#add_moment").hide();
   $("#add_journey input:submit").on('click', function(event){
     event.preventDefault();
@@ -12,7 +13,9 @@ $(function(){
   $("#add_moment input:submit").on('click', function(event){
     event.preventDefault();
     var description = $("#moment_description").val();
+    var location = $("#address").val();
     app.moment.controller.show.init(description);
+    app.location.controller.initMap(location);
     // app.moment.controller.show.revealMoment(title, date);
   });
   

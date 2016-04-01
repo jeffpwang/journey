@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0">
 
   <title>Journey</title>
 
@@ -18,8 +19,21 @@
   <script src="app/controllers/locations.controller.js"></script>
   <script src="app/controllers/moments.controller.js"></script>
 
+  <style>
+     html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+     }
+     #map {
+       height: 50%;
+     }
+   </style>
+
+
 </head>
 <body>
+  
   <div id="wrapper">
     <h1>Journey</h1>
     <h2 id ="journey_header"></h2>
@@ -42,10 +56,16 @@
       <label for="moment_address">Address:</label>
       <input type="text" id="address" name="address" placeholder="11 Broadway, New York, NY">
       <input type="submit" value="Submit">
-    </form><!-- #add_task -->
-    
+    </form>
+   
+
     
     
   </div><!-- #wrapper -->
+  <div id="map"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwd5sUJ2ljPEgASiqNwxVhMFGlr5zDgRE&callback=initMap"
+   async defer></script>
+
+  
 </body>
 </html>
