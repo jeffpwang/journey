@@ -8,7 +8,7 @@ $(function(){
     var date = $("#journey_date").val();
     app.journey.controller.show.init(title, date);
     app.journey.controller.show.revealMoment(title, date);
-  });
+  }); // ends add journey listener
 
   $("#add_moment input:submit").on('click', function(event){
     event.preventDefault();
@@ -28,9 +28,7 @@ $(function(){
         app.location.controller.repositionMap();
       });
     }
-
-
-  });
+  }); //ends add_moment click listener
 
 
 
@@ -40,7 +38,7 @@ $(function(){
   //   google.maps.event.removeListener(listener); 
   // });
   
-})
+});
 
 var app = {
   journey: {},
