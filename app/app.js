@@ -13,13 +13,15 @@ $(function(){
   $("#add_moment input:submit").on('click', function(event){
     event.preventDefault();
     var description = $("#moment_description").val();
-    var location = $("#address").val();
-    app.moment.controller.show.init(description);
+    var address = $("#address").val();
+    var location = app.location.controller.init(address);
+
+    app.moment.controller.show.init(description, location);
     
     if ($('#moment_list li').length === 1) {
-      app.location.controller.initMap(location);  
+      app.location.controller.initMap(location.address);  
     } else {
-      app.location.controller.addMarker(location);
+      app.location.controller.addMarker(location.address);
     }
   });
   

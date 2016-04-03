@@ -1,9 +1,13 @@
 app.location.controller = {
 
-  initMap: (function (location) {
+  init: (function(address) {
+    return new app.location.model.new(address);
+  }),
+
+  initMap: (function (address) {
     var map;
     var geocoder = new google.maps.Geocoder();
-    var userAddress = location;
+    var userAddress = address;
 
     map = new google.maps.Map(document.getElementById('map'));
 

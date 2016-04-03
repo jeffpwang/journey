@@ -7,14 +7,15 @@ app.moment.model = {
           var moment = function Moment(description, location) {
             this.description = description; 
             this.journey = app.journey.model.all[0];
-            this.location = location; // will update later
+            this.location = location;
             var self = this; 
 
             function initialize() {
               counter++; 
               self.id = counter; 
               app.moment.model.all.push(self); 
-              self.journey.moments.push(self); 
+              self.journey.moments.push(self);
+              self.location.moments.push(self);
             };
 
             initialize();

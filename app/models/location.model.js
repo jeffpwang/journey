@@ -4,9 +4,9 @@ app.location.model = {
 
   new: ( function() {
           var counter = 0; 
-          var location = function Location(name) {
-            this.name = name
-            this.moments = []            
+          var location = function Location(address) {
+            this.address = address;
+            this.moments = [];      
             var self = this; 
             function initialize() {
               counter++; 
