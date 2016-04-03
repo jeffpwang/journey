@@ -14,12 +14,14 @@ app.location = {
                 counter++; 
                 self.id = counter; 
                 app.location.model.all.push(self); 
-              };
+              }
 
               initialize();
-            };
+            }
             return location;
-        }())
+        }()),
+
+    maps: []
   }, // ends model
 
   controller: {
@@ -27,42 +29,37 @@ app.location = {
     initMap: (function (location) {
       var map;
       var geocoder = new google.maps.Geocoder();
-      
       var userAddress = location;
-      map = new google.maps.Map(document.getElementById('map'), {
-         center: {lat: -34.397, lng: 150.644},
-         zoom: 17
-       });
+
+      map = new google.maps.Map(document.getElementById('map'));
+
+      app.location.model.maps.push(map);
 
       geocoder.geocode( { 'address': userAddress}, function(results, status) {
         map.setCenter(results[0].geometry.location);
-        var marker= new google.maps.Marker({
-        position: results[0].geometry.location,
-        map: map,
-        title: userAddress
-      })
-
+        map.setZoom(17);
+        var marker = new google.maps.Marker({
+          position: results[0].geometry.location,
+          map: map,
+          title: userAddress
+        });
       });
+    }), // ends initMap
 
-      
-     }) // ends initMap
+    addMarker: (function(location) {
+      var map = app.location.model.maps[0];
+      var userAddress = location;
+      var geocoder = new google.maps.Geocoder();
 
+      geocoder.geocode( { 'address': userAddress }, function(results, status) {
+        map.setCenter(results[0].geometry.location)
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+        });
+      });
+    }) //ends addMarker
   } // ends controller
-
-  // controller: {
-  //   show: {
-  //     init: function(description, location) {
-  //       var newMoment = new app.moment.model.new(description, location);
-  //       app.moment.controller.show.render(newMoment);
-  //     },
-
-  //     render: function(moment) {
-  //       $("#moment_list").append("<li>" + moment.description + "</li>");
-  //       $("#moment_description").val("");
-  //       $("#address").val("");
-  //     }
-  //   }
-  // }
 }
 
 

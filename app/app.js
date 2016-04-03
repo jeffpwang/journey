@@ -1,7 +1,7 @@
 $(function(){
 
-
   $("#add_moment").hide();
+
   $("#add_journey input:submit").on('click', function(event){
     event.preventDefault();
     var title = $("#journey_title").val();
@@ -15,8 +15,12 @@ $(function(){
     var description = $("#moment_description").val();
     var location = $("#address").val();
     app.moment.controller.show.init(description);
-    app.location.controller.initMap(location);
-    // app.moment.controller.show.revealMoment(title, date);
+    
+    if ($('#moment_list li').length === 1) {
+      app.location.controller.initMap(location);  
+    } else {
+      app.location.controller.addMarker(location);
+    }
   });
   
 })
@@ -66,6 +70,6 @@ app.journey = {
         }
       }
     }
-  }
+  } // ends controller
 }
 
