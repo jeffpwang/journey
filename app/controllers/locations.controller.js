@@ -6,31 +6,18 @@ app.location.controller = {
 
   initMap: (function (address) {
     var map;
-    var geocoder = new google.maps.Geocoder();
-    var userAddress = address;
-
     map = new google.maps.Map(document.getElementById('map'));
-
-    app.location.model.maps.push(map);
-
-    geocoder.geocode( { 'address': userAddress}, function(results, status) {
-      map.setCenter(results[0].geometry.location);
-      map.setZoom(17);
-      var marker = new google.maps.Marker({
-        position: results[0].geometry.location,
-        map: map,
-        title: userAddress
-      });
-    });
+    app.location.model.map = map;
+    app.location.controller.addMarker(address);
   }), // ends initMap
 
-  addMarker: (function(location) {
-    var map = app.location.model.maps[0];
-    var userAddress = location;
+  addMarker: (function (address) {
+    var map = app.location.model.map;
     var geocoder = new google.maps.Geocoder();
 
-    geocoder.geocode( { 'address': userAddress }, function(results, status) {
+    geocoder.geocode( { 'address': address }, function(results, status) {
       map.setCenter(results[0].geometry.location)
+      map.setZoom(17);
       var marker = new google.maps.Marker({
         map: map,
         position: results[0].geometry.location

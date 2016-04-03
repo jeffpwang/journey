@@ -19,7 +19,7 @@ app.location.model = {
           return location;
       }()),
 
-  maps: []
+  map: null
 } // ends model
 
 
