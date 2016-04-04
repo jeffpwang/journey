@@ -15,8 +15,8 @@ $(function(){
     var title = $("#moment_title").val();
     var category = $("#category_dropdown").text();
     var description = $("#moment_description").val();
-    var address = $("#address").val();
-    var location = app.location.controller.init(address);
+    var place = $("#address").val();
+    var location = app.location.controller.init(place);
     app.moment.controller.show.init(title, category, description, location);
     
     if ($('#moment_list li').length === 1) {

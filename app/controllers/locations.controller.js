@@ -4,23 +4,22 @@ app.location.controller = {
 
   markers: [],
 
-  init: (function(address) {
-    return new app.location.model.new(address);
+  init: (function(place) {
+    return new app.location.model.new(place);
   }),
 
-  initMap: (function (address) {
+  initMap: (function (place) {
     var map;
     map = new google.maps.Map(document.getElementById('map'));
-    debugger;
     app.location.model.map = map;
-    app.location.controller.addMarker(address);
+    app.location.controller.addMarker(place);
   }), // ends initMap
 
-  addMarker: (function (address) {
+  addMarker: (function (place) {
     var map = app.location.model.map;
-    var geocoder = new google.maps.Geocoder();
+    var service = new google.maps.places.PlacesService(map);
 
-    geocoder.geocode( { 'address': address }, function(results, status) {
+    service.textSearch( { query: place }, function(results, status) {
       map.setCenter(results[0].geometry.location)
       map.setZoom(17);
       var marker = new google.maps.Marker({
