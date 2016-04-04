@@ -12,11 +12,12 @@ $(function(){
 
   $("#add_moment input:submit").on('click', function(event){
     event.preventDefault();
+    var title = $("#moment_title").val();
+    var category = $("#category_dropdown").text();
     var description = $("#moment_description").val();
     var address = $("#address").val();
     var location = app.location.controller.init(address);
-
-    app.moment.controller.show.init(description, location);
+    app.moment.controller.show.init(title, category, description, location);
     
     if ($('#moment_list li').length === 1) {
       app.location.controller.initMap(location.address);  
@@ -30,7 +31,11 @@ $(function(){
     }
   }); //ends add_moment click listener
 
+  $(".dropdown-item").on("click", function(){
+    var choice = $(this).text()
+    $("#category_dropdown").text(choice)
 
+  })
 
   // map.fitBounds(bounds);
   // var listener = google.maps.event.addListener(map, "idle", function() { 

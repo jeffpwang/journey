@@ -61,6 +61,24 @@
     </form>
     
     <form id="add_moment" action="#" method="post">
+
+      <label for="moment_title">Moment Title:</label><br>
+      <input type="text" class="form-control input-lg" id="moment_title" name="moment_title" placeholder="Moment Title"><br>
+      <label for="moment_category">Category:</label><br>
+      <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" id = "category_dropdown"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pick One
+          </button>
+          <div class="dropdown-menu">
+            <span class="glyphicon glyphicon-glass pull-left"><a class="dropdown-item" href="#">Social</a></span><br><br>
+            <span class="glyphicon glyphicon-heart-empty pull-left"><a class="dropdown-item" href="#">Wellness</a><br><br>
+            <span class="glyphicon glyphicon-headphones pull-left"><a class="dropdown-item" href="#">Entertainment</a><br><br>
+            <span class="glyphicon glyphicon-inbox pull-left"><a class="dropdown-item" href="#">Work</a><br><br>
+            <span class="glyphicon glyphicon-cog pull-left"><a class="dropdown-item" href="#">Other</a><br><br>
+          </div>
+
+      </div><br>   
+
       <label for="moment_description">Moment description:</label><br>
       <input type="text" class="form-control input-lg" id="moment_description" name="moment_description" placeholder="Description"><br>
 
