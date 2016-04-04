@@ -11,6 +11,7 @@ app.location.controller = {
   initMap: (function (address) {
     var map;
     map = new google.maps.Map(document.getElementById('map'));
+    debugger;
     app.location.model.map = map;
     app.location.controller.addMarker(address);
   }), // ends initMap
