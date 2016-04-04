@@ -28,6 +28,15 @@ app.location.controller = {
         label: (app.location.controller.markerCounter += 1).toString()
       });
       app.location.controller.markers.push(marker);
+
+      var infowindow = new google.maps.InfoWindow({
+        content: app.location.model.all.slice(-1)[0].moments.slice(-1)[0].title
+      });
+
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
+
       var index = app.location.model.all.length - 1;
       app.location.model.all[index].address = results[0].formatted_address;
    
