@@ -68,8 +68,8 @@ app.location.controller = {
     })
 
 
-  function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
-      debugger;
+
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
       directionsService.route({
         origin: place1,
         destination: place2,
@@ -98,7 +98,7 @@ app.location.controller = {
 
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
-      debugger;
+  
       directionsService.route({
         origin: place1,
         destination: place2,
@@ -127,7 +127,7 @@ app.location.controller = {
 
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
-      debugger;
+    
       directionsService.route({
         origin: place1,
         destination: place2,
@@ -156,7 +156,7 @@ app.location.controller = {
 
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
-      debugger;
+    
       directionsService.route({
         origin: place1,
         destination: place2,

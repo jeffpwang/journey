@@ -38,7 +38,7 @@ $(function(){
 
   $(".dropdown-item").on("click", function(){
     var choice = $(this).text()
-    $("#category_dropdown").text(choice)
+    $("#category_menu").text(choice)
 
   });
 
