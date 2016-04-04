@@ -3444,6 +3444,7 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg,
 .btn-group-lg > .btn {
+  text-align: right;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
@@ -5225,7 +5226,7 @@ a.thumbnail.active {
 }
 .media-right,
 .media > .pull-right {
-  padding-left: 10px;
+  padding-left: 20px;
 }
 .media-left,
 .media > .pull-left {

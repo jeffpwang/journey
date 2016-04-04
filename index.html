@@ -91,7 +91,7 @@
       </ul>
       </div>
       <input type="text" class="form-control input-lg" id="moment_title" name="moment_title" placeholder="Moment Title"><br>
-      </div>
+      </div><br>
       
       <div class="form-group row">
       <label for="moment_description">Moment description:</label><br>
@@ -114,9 +114,12 @@
 
       <ul id="moment_list" style="list-style-type:none"></ul>
 
-      <button type="button" id="direction_button" class="btn btn-default btn-lg">
-         <span class="glyphicon glyphicon-road" aria-hidden="true"></span> Get Directions!
-      </button>
+      <div class="btn-group-lg pull-right" role="group" aria-label="...">
+        <button type="button" id="direction_button_drive" class="btn btn-default"><span class="glyphicon glyphicon-road"></span></button>
+        <button type="button" id="direction_button_bike" class="btn btn-default"><img src="http://www.iconarchive.com/download/i95552/iconsmind/outline/Bicycle.ico" height="20" width="20"></button>
+        <button type="button" id="direction_button_walk" class="btn btn-default"><img src="http://downloadicons.net/sites/default/files/baby-feet-icon-60777.png" height="20" width="20"></button>
+        <button type="button" id="direction_button_transit" class="btn btn-default"><img src="http://uxrepo.com/static/icon-sets/ocha/svg/train.svg" height="20" width="20"></button>
+      </div>
 
     </section>
   </div>

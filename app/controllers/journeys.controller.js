@@ -7,12 +7,12 @@ app.journey.controller = {
 
     render: function(journey) {
       $("#journey_header").text(journey.title + " - " + journey.date)
-      $("#add_journey").hide();
+      $("#add_journey").fadeOut(800);
     },
 
     revealMoment: function(title, date) {
       if(app.journey.model.all.length > 0 || title !== "" && date !== ""){
-        $("#add_moment").show();
+        $("#add_moment").fadeIn(800);
       }
     }
   }

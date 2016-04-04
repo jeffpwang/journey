@@ -15,7 +15,7 @@ $(function(){
 
   $("#add_moment input:submit").on('click', function(event){
     event.preventDefault();
-    $('#map').show();
+    $('#map').fadeIn(800);
     $('#moments button').show();
     var title = $("#moment_title").val();
     var category = $("#category_dropdown").text();
@@ -42,9 +42,26 @@ $(function(){
 
   });
 
-  $('#moments button').on("click", function(event){
+  $('#direction_button_drive').on("click", function(event){
     event.preventDefault();
-    app.location.controller.getDirections();
+    app.location.controller.getDirectionsDrive();
+  });
+
+  $('#direction_button_bike').on("click", function(event){
+    event.preventDefault();
+    app.location.controller.getDirectionsBike();
+  });
+
+
+  $('#direction_button_walk').on("click", function(event){
+    event.preventDefault();
+    app.location.controller.getDirectionsWalk();
+  });
+
+
+  $('#direction_button_transit').on("click", function(event){
+    event.preventDefault();
+    app.location.controller.getDirectionsTransit();
   });
 
   // map.fitBounds(bounds);

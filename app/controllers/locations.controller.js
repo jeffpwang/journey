@@ -55,7 +55,7 @@ app.location.controller = {
     map.fitBounds(bounds);
   }), // ends reposition map
 
-  getDirections: (function () {
+  getDirectionsDrive: (function () {
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
     var map = app.location.model.map;
@@ -63,18 +63,104 @@ app.location.controller = {
 
     app.location.model.all.forEach(function(location, index) {
       if (index != 0) {
-        debugger;
         calculateAndDisplayRoute(directionsService, directionsDisplay, app.location.model.all[index-1].address, location.address);
       }
     })
 
 
-    function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
       debugger;
       directionsService.route({
         origin: place1,
         destination: place2,
         travelMode: google.maps.TravelMode.DRIVING
+      }, function(response, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+        } else {
+          window.alert('Directions request failed due to ' + status);
+        }
+      });
+    }
+  }), 
+
+   getDirectionsBike: (function () {
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    var map = app.location.model.map;
+    directionsDisplay.setMap(map);
+
+    app.location.model.all.forEach(function(location, index) {
+      if (index != 0) {
+        calculateAndDisplayRoute(directionsService, directionsDisplay, app.location.model.all[index-1].address, location.address);
+      }
+    })
+
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
+      debugger;
+      directionsService.route({
+        origin: place1,
+        destination: place2,
+        travelMode: google.maps.TravelMode.BICYCLING
+      }, function(response, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+        } else {
+          window.alert('Directions request failed due to ' + status);
+        }
+      });
+    }
+  }), 
+
+    getDirectionsWalk: (function () {
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    var map = app.location.model.map;
+    directionsDisplay.setMap(map);
+
+    app.location.model.all.forEach(function(location, index) {
+      if (index != 0) {
+        calculateAndDisplayRoute(directionsService, directionsDisplay, app.location.model.all[index-1].address, location.address);
+      }
+    })
+
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
+      debugger;
+      directionsService.route({
+        origin: place1,
+        destination: place2,
+        travelMode: google.maps.TravelMode.WALKING
+      }, function(response, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+        } else {
+          window.alert('Directions request failed due to ' + status);
+        }
+      });
+    }
+  }), 
+
+     getDirectionsTransit: (function () {
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    var map = app.location.model.map;
+    directionsDisplay.setMap(map);
+
+    app.location.model.all.forEach(function(location, index) {
+      if (index != 0) {
+        calculateAndDisplayRoute(directionsService, directionsDisplay, app.location.model.all[index-1].address, location.address);
+      }
+    })
+
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
+      debugger;
+      directionsService.route({
+        origin: place1,
+        destination: place2,
+        travelMode: google.maps.TravelMode.TRANSIT
       }, function(response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
           directionsDisplay.setDirections(response);
