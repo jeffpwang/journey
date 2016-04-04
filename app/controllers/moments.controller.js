@@ -20,7 +20,7 @@ app.moment.controller = {
       }
       // $("#moment_list").append("<li>" + moment.title + "</li>");
       $("#moment_title").val("");
-      $("#category_dropdown").text("Pick one");
+      $("#category_menu").text("Pick one");
       $("#moment_description").val("");
       $("#address").val("");
     }

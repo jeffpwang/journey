@@ -63,14 +63,12 @@ app.location.controller = {
 
     app.location.model.all.forEach(function(location, index) {
       if (index != 0) {
-        debugger;
         calculateAndDisplayRoute(directionsService, directionsDisplay, app.location.model.all[index-1].address, location.address);
       }
     })
 
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay, place1, place2) {
-      debugger;
       directionsService.route({
         origin: place1,
         destination: place2,
