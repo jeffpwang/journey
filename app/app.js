@@ -2,9 +2,11 @@ $(function(){
 
   $("#add_moment").hide();
   $('#moments button').hide();
+  $('#map').hide();
 
   $("#add_journey input:submit").on('click', function(event){
     event.preventDefault();
+    $('.header').fadeOut(800);
     var title = $("#journey_title").val();
     var date = $("#journey_date").val();
     app.journey.controller.show.init(title, date);
@@ -13,6 +15,7 @@ $(function(){
 
   $("#add_moment input:submit").on('click', function(event){
     event.preventDefault();
+    $('#map').show();
     $('#moments button').show();
     var title = $("#moment_title").val();
     var category = $("#category_dropdown").text();

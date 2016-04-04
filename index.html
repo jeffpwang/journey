@@ -7,7 +7,8 @@
   <title>Journey</title>
   <!-- include add-ons and stylesheets -->
 
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/stylish-portfolio.css">
   <script src="app/lib/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="app/lib/underscore.min.js"></script>
@@ -46,46 +47,61 @@
     </div>
   </nav>
 
+  <header id="top" class="header">
+    <div class="text-vertical-center">
+      <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+          <form id="add_journey" action="#" method="post">
+            <label for="journey_title"><h2>Add a new journey:</h2></label><br>
+            <input class="form-control input-lg" type="text" id="journey_title" name="journey_title" placeholder="My Amazing Roadtrip"><br>
+
+            <label for="journey_date"><h2>Date:</h2></label><br>
+            <input type="date" class="form-control input-lg" id="journey_date" name="journey_date" placeholder="MM/DD/YYYY"><br>
+
+            <input type="submit" class="btn btn-success btn-lg" value="Create Journey">
+          </form>
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+    </div>
+  </header>
 
 <div class="row">
-  <div class="col-md-6">
-
-    <form id="add_journey" action="#" method="post">
-      <label for="journey_title">Add a new journey:</label><br>
-      <input class="form-control input-lg" type="text" id="journey_title" name="journey_title" placeholder="My Amazing Roadtrip"><br>
-
-      <label for="journey_date">Date:</label><br>
-      <input type="date" class="form-control input-lg" id="journey_date" name="journey_date" placeholder="MM/DD/YYYY"><br>
-
-      <input type="submit" class="btn btn-success btn-lg" value="Create Journey">
-    </form>
-    
+  <div class="col-md-1">
+  </div>
+    <div class="col-md-5">
     <form id="add_moment" action="#" method="post">
+      <br>
+      <div class="input-group">
+        <div class="input-group-btn">
+         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></button>
 
       <label for="moment_title">Moment Title:</label><br>
+      
+
+      <ul class="dropdown-menu">
+        <li class="glyphicon glyphicon-glass pull-left"><a class="dropdown-item" href="#">Social</a></li>
+        <li class="glyphicon glyphicon-heart-empty pull-left"><a class="dropdown-item" href="#">Wellness</a></li>
+        <li class="glyphicon glyphicon-headphones pull-left"><a class="dropdown-item" href="#">Entertainment</a></li>
+        <li class="glyphicon glyphicon-inbox pull-left"><a class="dropdown-item" href="#">Work</a></li>
+        <li class="glyphicon glyphicon-cog pull-left"><a class="dropdown-item" href="#">Other</a></li>
+      </ul>
+      </div>
       <input type="text" class="form-control input-lg" id="moment_title" name="moment_title" placeholder="Moment Title"><br>
-      <label for="moment_category">Category:</label><br>
-      <div class="btn-group">
-          <button type="button" class="btn btn-secondary dropdown-toggle" id = "category_dropdown"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Pick One
-          </button>
-          <div class="dropdown-menu">
-            <span class="glyphicon glyphicon-glass pull-left"><a class="dropdown-item" href="#">Social</a></span><br><br>
-            <span class="glyphicon glyphicon-heart-empty pull-left"><a class="dropdown-item" href="#">Wellness</a><br><br>
-            <span class="glyphicon glyphicon-headphones pull-left"><a class="dropdown-item" href="#">Entertainment</a><br><br>
-            <span class="glyphicon glyphicon-inbox pull-left"><a class="dropdown-item" href="#">Work</a><br><br>
-            <span class="glyphicon glyphicon-cog pull-left"><a class="dropdown-item" href="#">Other</a><br><br>
-          </div>
-
-      </div><br><br> 
-
+      </div>
+      
+      <div class="form-group row">
       <label for="moment_description">Moment description:</label><br>
       <input type="text" class="form-control input-lg" id="moment_description" name="moment_description" placeholder="Description"><br>
+      </div>
 
-
+      <div class="form-group row">
       <label for="moment_address">Address:</label><br>
-      <input type="text" class="form-control input-lg" id="address" name="address" placeholder="11 Broadway, New York, NY"><br>
-
+      <input type="text" class="form-control input-lg" id="address" name="address" placeholder="11 Broadway, New York, NY">
+      </div>
 
       <input type="submit" class="btn btn-primary btn-lg" value="Create Moment">
     </form> 
