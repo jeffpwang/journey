@@ -4,7 +4,8 @@ app.location.model = {
 
   new: ( function() {
     var counter = 0; 
-    var location = function Location(address) {
+    var location = function Location(placeName, address) {
+      this.place = placeName;
       this.address = address;
       this.moments = [];      
       var self = this; 
